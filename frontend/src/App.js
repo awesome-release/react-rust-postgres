@@ -5,16 +5,16 @@ import "./App.css";
 function App() {
   const [message, setMessage] = useState();
   useEffect(() => {
-    fetch("/api/")
+    fetch("/api/users")
       .then(res => res.json())
-      .then(res => setMessage(res.message))
+      .then(res => setMessage(res))
       .catch(console.error);
   }, [setMessage]);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>{message || "Loading..."}</p>
+        <p>{(message && `Hello with ${message.length} users`) || "Loading..."}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>

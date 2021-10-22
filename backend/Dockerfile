@@ -1,4 +1,4 @@
-FROM solanalabs/rust-nightly:2021-10-05 AS base
+FROM rust:buster AS base
 
 RUN apt-get update \
   && apt-get install -y libpq-dev \
