@@ -4,6 +4,8 @@ services:
     build:
       context: frontend
       target: development
+    environment:
+      - BACKEND_INGRESS_URL=http://backend:8000
     networks:
       - client-side
     ports:
